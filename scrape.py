@@ -1,4 +1,5 @@
 import requests
+import json
 from bs4 import BeautifulSoup
 r = requests.get('https://www.inshorts.com/en/read/')
 res = []
@@ -9,4 +10,6 @@ for el in content:
     time = el.select('.news-card-author-time-in-title .time')
     url = el.select('.read-more a') or el.select('.news-card-title .clickable')
     res.append({'title': title[0].text, "url" : url[0]['href'], "time" : time[0].text })
-print(res)
+with open('i.json', 'w') as f:
+    json.dump(res, f)
+    print('Inshorts updated')
