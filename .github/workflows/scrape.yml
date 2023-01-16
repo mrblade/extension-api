@@ -23,6 +23,7 @@ jobs:
           python-version: 3.8 #install the python needed
       - name: execute py script # run the run.py to get the latest data
         run: |
+          python -m pip install beautifulsoup4
           python -m pip install requests
           python scrape.py
           git config --global user.name "mrblade"
