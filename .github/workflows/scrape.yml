@@ -1,0 +1,31 @@
+name: Inshorts py
+on:
+  push:
+    paths:
+      - .github/workflows/scrape.yml # Only run a new workflow every time this file (scrape.yml) file changes
+  workflow_dispatch: # Required even though this is currently empty
+  schedule:
+    - cron: '*/5 * * * *' # every 5min
+defaults:
+  run:
+    shell: bash
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+          python scrape.py
+          git config --global user.name "mrblade"
+          git config --global user.email "bullet_harsimran@yahoo.com"
+          git add i.json
+          git commit inshorts.json -m "Inshorts updated"
+          git push -f
