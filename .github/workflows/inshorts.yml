@@ -27,9 +27,3 @@ jobs:
     - run: npm ci
     #- run: npm run build --if-present
     - run: npm test
-    - run: |
-            git config --global user.name "mrblade"
-            git config --global user.email "bullet_harsimran@yahoo.com"
-            git add inshorts.json
-            git commit --amend -m "Inshorts autoupdated"
-            git push -f
