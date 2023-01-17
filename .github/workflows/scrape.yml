@@ -5,7 +5,7 @@ on:
       - .github/workflows/scrape.yml
       - code/scrape.py
   schedule:
-    - cron: '*/5 * * * *' # every 5min
+    - cron: '*/10 * * * *' # every 10min
 defaults:
   run:
     shell: bash
