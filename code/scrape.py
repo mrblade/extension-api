@@ -16,9 +16,3 @@ for el in content:
 with open(mypath + "/inshorts.json", 'w') as f:
     json.dump(res, f)
     print('Inshorts updated')
-
-
-file_o=open("inshorts.json")
-content=file_o.read()
-print(content)                      
-file_o.close()
