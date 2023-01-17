@@ -6,10 +6,10 @@ res = []
 soup = BeautifulSoup(r.content, 'html.parser')
 content = soup.find_all('div', class_='news-card')
 for el in content:
-    title = el.select('.news-card-title .clickable span')
-    time = el.select('.news-card-author-time-in-title .time')
-    url = el.select('.read-more a') or el.select('.news-card-title .clickable')
-    res.append({'title': title[0].text, "url" : url[0]['href'], "time" : time[0].text })
-with open('i.json', 'w') as f:
+    title = el.select('.news-card-title .clickable span')[0].text
+    time = el.select('.news-card-author-time-in-title .time')[0].text
+    url = el.select('.read-more a')[0]['href'] if el.select('.read-more a') else "https://www.inshorts.com" + el.select('.news-card-title .clickable')[0]['href']
+    res.append({'title': title.strip(), "url" : url.strip(), "time" : time.strip() })
+with open('inshorts.json', 'w') as f:
     json.dump(res, f)
     print('Inshorts updated')
