@@ -37,5 +37,5 @@ jobs:
         with:
           token: ${{ secrets.TOKEN }}
           gist_id: ${{vars.GIST_ID}}
-          file_path: inshorts.json
+          file_path: code/dump.json
           file_type: binary
