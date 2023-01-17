@@ -2,7 +2,8 @@ name: Inshorts Autoupdate
 on:
   push:
     paths:
-      - .github/workflows/scrape.yml # Only run a new workflow every time this file (scrape.yml) file changes
+      - .github/workflows/scrape.yml
+      - code/scrape.py
   schedule:
     - cron: '*/5 * * * *' # every 5min
 defaults:
