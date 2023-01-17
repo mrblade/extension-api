@@ -26,8 +26,8 @@ jobs:
           python -m pip install beautifulsoup4
           python -m pip install requests
           python scrape.py
-          git config --global user.name "mrblade"
-          git config --global user.email "bullet_harsimran@yahoo.com"
+          git config --global user.name ${{github.actor}} 
+          git config --global user.email ${{github.actor}}@users.noreply.github.com 
           git add i.json
           git commit i.json -m "Inshorts updated"
           git push -f
