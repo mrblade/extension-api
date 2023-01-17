@@ -35,6 +35,6 @@ jobs:
         uses: exuanbo/actions-deploy-gist@v1
         with:
           token: ${{ secrets.TOKEN }}
-          gist_id: from_gist_url
+          gist_id: ${{vars.GIST_ID}}
           file_path: inshorts.json
           file_type: binary
