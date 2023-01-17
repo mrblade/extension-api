@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - .github/workflows/scrape.yml # Only run a new workflow every time this file (scrape.yml) file changes
-  workflow_dispatch: # Required even though this is currently empty
   schedule:
     - cron: '*/5 * * * *' # every 5min
 defaults:
