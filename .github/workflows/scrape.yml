@@ -29,10 +29,4 @@ jobs:
           pip install requests
           python code/scrape.py
           gh gist create code/inshorts.json
-      #- name: Deploy gist
-        #uses: exuanbo/actions-deploy-gist@v1
-        #with:
-          #token: ${{ secrets.TOKEN }}
-          #gist_id: ${{vars.GIST_ID}}
-          #file_path: code/inshorts.json
-          #file_type: binary
+
