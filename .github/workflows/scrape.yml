@@ -28,5 +28,5 @@ jobs:
           pip install beautifulsoup4
           pip install requests
           python code/scrape.py
-          gh gist edit df3bbccbad40ca1eb55d7e1b79ab8625 inshorts.json
+          gh gist edit df3bbccbad40ca1eb55d7e1b79ab8625 code/inshorts.json
 
