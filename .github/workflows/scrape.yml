@@ -28,6 +28,6 @@ jobs:
           python code/scrape.py
           git config --global user.name ${{github.actor}} 
           git config --global user.email ${{github.actor}}@users.noreply.github.com 
-          git add inshorts.json
-          git commit inshorts.json -m "Inshorts updated"
+          git add API/inshorts.json
+          git commit API/inshorts.json -m "Inshorts updated"
           git push -f
