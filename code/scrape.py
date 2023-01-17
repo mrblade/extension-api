@@ -12,8 +12,7 @@ for el in content:
     time = el.select('.news-card-author-time-in-title .time')[0].text
     url = el.select('.read-more a')[0]['href'] if el.select('.read-more a') else "https://www.inshorts.com" + el.select('.news-card-title .clickable')[0]['href']
     res.append({'title': title.strip(), "url" : url.strip(), "time" : time.strip() })
-
-mode = 'a' if os.path.exists(mypath) else 'w'
-with open('inshorts.json', mode) as f:
-    json.dump(res, f)
+    
+with open("sample.json", "w") as outfile:
+    json.dump(res, outfile)
     print('Inshorts updated')
