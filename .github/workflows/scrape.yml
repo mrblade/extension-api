@@ -15,15 +15,16 @@ jobs:
 
     steps:
       - name: checkout repo content
-        uses: actions/checkout@v2 # checkout the repository content to github runner.
+        uses: actions/checkout@v3 # checkout the repository content to github runner.
       - name: setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8 #install the python needed
+          cache: 'pip'
       - name: execute py script # run the run.py to get the latest data
         run: |
-          python -m pip install beautifulsoup4
-          python -m pip install requests
+          pip install beautifulsoup4
+          pip install requests
           python code/scrape.py
           git config --global user.name ${{github.actor}} 
           git config --global user.email ${{github.actor}}@users.noreply.github.com 
