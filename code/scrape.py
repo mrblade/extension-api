@@ -14,6 +14,6 @@ for el in content:
     res.append({'title': title.strip(), "url" : url.strip(), "time" : time.strip() })
 
 mode = 'a' if os.path.exists(mypath) else 'w'
-with open('dump.json', mode) as f:
+with open('inshorts.json', mode) as f:
     json.dump(res, f)
     print('Inshorts updated')
