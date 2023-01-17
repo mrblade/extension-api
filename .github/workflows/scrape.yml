@@ -25,8 +25,16 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           python code/scrape.py
-          git config --global user.name ${{github.actor}} 
-          git config --global user.email ${{github.actor}}@users.noreply.github.com 
-          git add inshorts.json
-          git commit inshorts.json -m "Inshorts updated"
-          git push -f
+          #git config --global user.name ${{github.actor}} 
+          #git config --global user.email ${{github.actor}}@users.noreply.github.com 
+          #git add inshorts.json
+          #git commit inshorts.json -m "Inshorts updated"
+          #git push -f
+      - uses: actions/checkout@v3
+      - name: Deploy gist
+        uses: exuanbo/actions-deploy-gist@v1
+        with:
+          token: ${{ secrets.TOKEN }}
+          gist_id: from_gist_url
+          file_path: inshorts.json
+          file_type: binary
