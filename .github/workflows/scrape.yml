@@ -15,26 +15,16 @@ jobs:
 
     steps:
       - name: checkout repo content
-<<<<<<< HEAD
-        uses: actions/checkout@v3 # checkout the repository content to github runner.
-=======
         uses: actions/checkout@v3
->>>>>>> 6fe89fe (Updated workflow)
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.8 #install the python needed
+          python-version: 3.8
           cache: 'pip'
-<<<<<<< HEAD
-      - run: pip install -r code/requirements.txt
-      - name: execute py script # run the run.py to get the latest data
-        run: |
-=======
       - name: execute py script # run the run.py to get the latest data
         run: |
           pip install beautifulsoup4
           pip install requests
->>>>>>> 6fe89fe (Updated workflow)
           python code/scrape.py
           #git config --global user.name ${{github.actor}} 
           #git config --global user.email ${{github.actor}}@users.noreply.github.com 
